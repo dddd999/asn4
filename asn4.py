@@ -41,7 +41,7 @@ training_set = featuresets[:250]
 
 testing_set = featuresets[100:]
 
-LogisticRegression_classifier = SklearnClassifier(LogisticRegression(solver='lbfgs',max_iter=500))
+LogisticRegression_classifier = SklearnClassifier(LogisticRegression(solver='lbfgs',max_iter=500,multi_class='auto'))
 LogisticRegression_classifier.train(training_set)
 print("LogisticRegression accuracy:", (nltk.classify.accuracy(LogisticRegression_classifier, testing_set)), "%")
 
